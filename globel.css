@@ -1,0 +1,51 @@
+/* Increase switch size */
+.custom-switch .form-check-input {
+    width: 2.5rem; /* Adjust width */
+    height: 1.5rem; /* Adjust height */
+    border-radius: 1rem; /* Make it circular */
+  }
+  
+  /* Customize switch background */
+  .custom-switch .form-check-input:checked {
+    background-color: #4caf50; /* Green for ON state */
+    border-color: #4caf50;
+  }
+  
+  .custom-switch .form-check-input:not(:checked) {
+    background-color: #f44336; /* Red for OFF state */
+    border-color: #f44336;
+  }
+  
+  /* Customize the toggle knob */
+  .custom-switch .form-check-input::before {
+    width: 1rem; /* Adjust toggle size */
+    height: 1rem; /* Adjust toggle size */
+    border-radius: 50%;
+    background-color: white;
+    top: 3px; /* Center toggle vertically */
+    left: 3px; /* Adjust spacing */
+  }
+
+/* new css */
+ 
+  .navbar-brand {
+    background: #1E2D27 !important;
+}
+.pcoded-navbar {
+  background: #1E2D27 !important; 
+}
+
+
+  /* cse */
+
+.table-responsive-custom {
+  table-layout: fixed; /* This is the most important rule */
+  width: 100%;
+}
+
+/* 2. Style the description column to handle long text */
+.table-description-cell {
+  word-wrap: break-word; /* This allows long words to break and wrap */
+  white-space: normal !important; /* Ensures text wraps onto new lines */
+  max-width: 350px; /* Optional: Set a max-width for the column */
+}
