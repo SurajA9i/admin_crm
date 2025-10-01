@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import * as XLSX from 'xlsx';
+// import * as XLSX from 'xlsx'; // Temporarily disabled for build
 import './ContactImport.scss';
 import CRMApi from '../../../services/CRMApi';
 
@@ -41,32 +41,15 @@ const ContactImport = ({ onClose, onImportComplete }) => {
     const uploadedFile = event.target.files[0];
     if (!uploadedFile) return;
 
-    // Validate file type
-    const validTypes = [
-      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // .xlsx
-      'application/vnd.ms-excel', // .xls
-      'text/csv' // .csv
-    ];
-
-    if (!validTypes.includes(uploadedFile.type)) {
-      CRMApi.showError('Please upload an Excel (.xlsx, .xls) or CSV file');
-      return;
-    }
-
-    setFile(uploadedFile);
-    processFile(uploadedFile);
+    // Temporarily disabled for build - Excel/CSV import functionality
+    alert('File import functionality is temporarily disabled during deployment. This feature will be available soon!');
+    return;
   };
 
   const processFile = (file) => {
-    const reader = new FileReader();
-    
-    reader.onload = (e) => {
-      try {
-        const data = new Uint8Array(e.target.result);
-        const workbook = XLSX.read(data, { type: 'array' });
-        const sheetName = workbook.SheetNames[0];
-        const worksheet = workbook.Sheets[sheetName];
-        const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+    // Temporarily disabled for build
+    console.log('File processing temporarily disabled');
+    return;
 
         if (jsonData.length < 2) {
           CRMApi.showError('File must contain at least a header row and one data row');
@@ -330,16 +313,8 @@ const ContactImport = ({ onClose, onImportComplete }) => {
   };
 
   const downloadTemplate = () => {
-    const templateData = [
-      ['Name', 'Phone', 'Email', 'Platform', 'Company', 'Position', 'Stage', 'Tags', 'Notes'],
-      ['John Doe', '+1234567890', 'john@example.com', 'whatsapp', 'Example Corp', 'Manager', 'lead', 'vip, priority', 'Interested in safari tours'],
-      ['Jane Smith', '+0987654321', 'jane@example.com', 'email', 'Tech Solutions', 'Developer', 'prospect', 'tech', 'Loves wildlife photography']
-    ];
-
-    const worksheet = XLSX.utils.aoa_to_sheet(templateData);
-    const workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workbook, worksheet, 'Contacts');
-    XLSX.writeFile(workbook, 'contact_import_template.xlsx');
+    // Temporarily disabled for build
+    alert('Template download functionality is temporarily disabled during deployment. This feature will be available soon!');
   };
 
   return (

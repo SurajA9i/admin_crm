@@ -1,0 +1,14 @@
+{
+  "buildCommand": "yarn build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "env": {
+    "VITE_APP_API_URL": "https://junglore-crm-backend.onrender.com/api"
+  }
+}
